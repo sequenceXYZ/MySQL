@@ -1,0 +1,33 @@
+#update the system
+sudo apt update
+
+#install mysql server
+sudo apt install mysql-server
+
+#activate mysql service
+systemctl is-active mysql
+
+#initial sql configuration
+sudo mysql_secure_installation
+
+#if repeated password requests are seen:
+sudo mysql
+
+#in sql prompt:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_password';
+exit
+
+#run again initial sql configuration
+sudo mysql_secure_installation
+
+#check the status of mysql(must be active and running)
+systemctl status mysql.service
+
+#in mysql prompt:
+mysql -u root -p
+mysql> FLUSH PRIVILEGES;
+mysql> exit
+
+sudo systemctl start mysql
+sudo systemctl stop mysql
+sudo systemctl status mysql

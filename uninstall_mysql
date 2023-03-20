@@ -1,0 +1,22 @@
+How to uninstall MySQL Server from Ubuntu 22.04. 
+
+
+#command to remove MySQL server:
+sudo apt-get remove --purge mysql*
+
+#remove the purge:
+sudo apt-get purge mysql*
+
+MySQL server is uninstalled completely without leaving residue files:
+sudo apt-get autoremove
+sudo apt-get autoclean
+
+
+#after uninstalling applications or packages its good to update the system:
+sudo apt-get dist-upgrade
+
+#check the MySQL presence:
+mysql --version
+
+
+
